@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Conway's Game of Life</title>
+    <!--<link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <h1>Conway's Game of Life</h1>
+    <p>
+      <ul>
+        <li> A dead cell will come alive if exactly 3 neighbours are living</li>
+        <li>A living cell will stay alive if 2 or 3 neighbours are living</li>
+        <li>Cells with less than 2 neighbours will die of underpopulation, cells with 4 or more neighbours will die of overpopulation</li>
+      </ul>
+    </p>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="sketch.js"></script>
+
+  </body>
+</html>
