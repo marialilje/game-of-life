@@ -7,8 +7,10 @@ let running = false;
 let actionButton;
 let clearButton;
 let randomizeButton;
+let slowButton;
+let speedButton;
 const offFr = 30;
-const onFr = 2;
+let onFr = 2;
 
 let grid = createGrid();
 
@@ -44,10 +46,14 @@ function setup() {
   actionButton = createButton("Start...");
   clearButton = createButton("Clear");
   randomizeButton = createButton("Randomize");
+  slowButton = createButton("<< x2");
+  speedButton = createButton("x2 >>");
 
   actionButton.mousePressed(onAction);
   clearButton.mousePressed(onClear);
   randomizeButton.mousePressed(onRandomize);
+  slowButton.mousePressed(onSlow);
+  speedButton.mousePressed(onSpeed);
 }
 
 function draw() {
@@ -72,6 +78,26 @@ function mousePressed() {
 
   if (isOnGrid(i, j)) {
     grid[i][j] = !grid[i][j];
+  }
+}
+
+function onSlow() {
+  if (running) {
+    onFr /= 2;
+    frameRate(onFr);
+    console.log(onFr);
+  } else {
+    console.log("Game is not running");
+  }
+}
+
+function onSpeed() {
+  if (running) {
+    onFr *= 2;
+    console.log(onFr);
+    frameRate(onFr);
+  } else {
+    console.log("Game is not running");
   }
 }
 
